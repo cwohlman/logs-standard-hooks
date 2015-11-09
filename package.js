@@ -14,6 +14,7 @@ Package.onUse(function(api) {
   api.versionsFrom('1.2.1');
   api.use('ecmascript');
   api.use('underscore');
+  api.use('random');
 
   api.addFiles('logs-standard-hooks.js');
 
@@ -23,9 +24,11 @@ Package.onUse(function(api) {
 Package.onTest(function(api) {
   api.use('ecmascript');
   api.use('tinytest');
+  api.use('random');
+  api.use('accounts-base');
 
   api.use('useful:logs');
-  api.use('useful:logs-standard-hooks');
+  api.use('useful:logs-standard-hooks', 'server');
 
   api.addFiles('logs-standard-hooks-tests.js');
 });
